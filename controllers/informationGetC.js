@@ -21,14 +21,14 @@ exports.getInfo = async (req, res) => {
                     });
                 }else {
                     axios
-                        .get("http://localhost:5000/information/get")
+                        .get("https://se-api.azurewebsites.net/information/get")
                         .then((info) =>{
-                            Client.setex(usersRedisKey, dataExpireTime, JSON.stringify(info.data));
+                            Client.setex(usersRedisKey, dataExpireTime, JSON.stringify(info.data.data));
 
                             return res.status(200).json({
                                 data: {
                                     source:"Information get by api",
-                                    values: JSON.parse(info.data)
+                                    values: info.data.data
                                 },
                                 message: 'Student Get Success!',
                                 statusCode: StatusCodes.Success
