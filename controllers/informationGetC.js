@@ -13,7 +13,7 @@ exports.getInfo = async (req, res) => {
                 if(information){
                    return  res.status(200).json({
                         data: {
-                            source:"Information get by redis",
+                            source:"Information get from redis",
                             values: JSON.parse(information)
                         },
                         message: 'Student Get Success!',
@@ -27,7 +27,7 @@ exports.getInfo = async (req, res) => {
 
                             return res.status(200).json({
                                 data: {
-                                    source:"Information get by api",
+                                    source:"Information get from api",
                                     values: info.data.data
                                 },
                                 message: 'Student Get Success!',
