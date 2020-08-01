@@ -27,7 +27,7 @@ exports.getInfo = async (req, res) => {
 
                             return res.status(200).json({
                                 data: {
-                                    source:"Information get from api",
+                                    source:"Information get from Mysql",
                                     values: info.data.data
                                 },
                                 message: 'Student Get Success!',
