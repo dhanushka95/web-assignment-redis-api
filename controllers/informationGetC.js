@@ -16,7 +16,7 @@ exports.getInfo = async (req, res) => {
                             source:"Information get from redis",
                             values: JSON.parse(information)
                         },
-                        message: 'Student Get Success!',
+                        message: 'Information Get Success!',
                         statusCode: StatusCodes.Success
                     });
                 }else {
@@ -30,7 +30,7 @@ exports.getInfo = async (req, res) => {
                                     source:"Information get from Mysql",
                                     values: info.data.data
                                 },
-                                message: 'Student Get Success!',
+                                message: 'Information Get Success!',
                                 statusCode: StatusCodes.Success
                             });
                         }).catch(e=>{
