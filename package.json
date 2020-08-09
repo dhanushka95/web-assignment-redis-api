@@ -11,11 +11,16 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "azure-storage": "^2.10.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "redis": "^3.0.2"
+    "into-stream": "^5.1.1",
+    "multer": "^1.4.2",
+    "parse-multipart": "^1.0.4",
+    "redis": "^3.0.2",
+    "streamifier": "^0.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
