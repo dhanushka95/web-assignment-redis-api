@@ -5,13 +5,14 @@ const inMemoryStorage = multer.memoryStorage();
 const uploadStrategy = multer({ storage: inMemoryStorage }).single('image');
 const axios = require('axios');
 const StatusCodes = require('../common/statusCode');
+const streamifier = require('streamifier');
 
 router.post('/add',uploadStrategy, async (req, res) => {
     try {
 
         axios
             .post("https://se-function.azurewebsites.net/api/HttpTrigger",{
-                filedata : req.file.buffer,
+                filedata : streamifier.createReadStream(new Buffer(req.file.buffer)),
                 filename : req.file.originalname,
                 contentType : req.file.mimetype
             })
