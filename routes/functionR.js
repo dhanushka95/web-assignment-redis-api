@@ -5,7 +5,6 @@ const inMemoryStorage = multer.memoryStorage();
 const uploadStrategy = multer({ storage: inMemoryStorage }).single('image');
 const axios = require('axios');
 const StatusCodes = require('../common/statusCode');
-const streamifier = require('streamifier');
 
 router.post('/add',uploadStrategy, async (req, res) => {
     try {
