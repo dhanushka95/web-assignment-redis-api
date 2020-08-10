@@ -11,7 +11,7 @@ router.post('/add',uploadStrategy, async (req, res) => {
 
         axios
             .post("https://se-function.azurewebsites.net/api/HttpTrigger",{
-                filedata : req.file.buffer.toString("base64"),
+                filedata : req.file,
                 filename : req.file.originalname,
                 contentType : req.file.mimetype
             })
